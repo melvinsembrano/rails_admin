@@ -86,7 +86,7 @@ module RailsAdmin
     end
 
     def visible_fields(action, model_config = @model_config)
-      model_config.send(action).with(controller: self, view: view_context, object: @object).visible_fields
+      model_config.send(action).with(controller: self, view: view_context, object: @object).fields #.visible_fields
     end
 
     def sanitize_params_for!(action, model_config = @model_config, target_params = params[@abstract_model.param_key])
